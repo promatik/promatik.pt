@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>António Almeida, Software Developer, promatik</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <meta name="zone" content="PT" />
+  <meta name="author" content="António Almeida" />
+  <meta name="developer" content="promatik" />
+  <meta name="image" content="/img/profile-512.jpg" />
+  <meta name="description" content="Software Engineer from Porto, Portugal. Studied Computer Graphics and Multimedia Engineer at IPVC. Get to know my work!" />
+  <meta name="keywords" content="António Almeida, promatik, Software Developer, Portfolio, Personal, Developer, Designer, WebDeveloper, WebDesigner, Interface Designer, Multimedia, Mobile, Programmer, Porto, Milheirós de Poiares, Milheirós, Poiares" />
+  <meta name="rating" content="General" />
+  <meta name="geo.region" content="Portugal" />
+  <meta name="geo.placename" content="Porto" />
+  <meta name="geo.position" content="41.15;-8.6106" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- App -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png" />
+  <meta name="application-name" content="promatik" />
+  <meta name="apple-mobile-web-app-title" content="promatik" />
+  <meta name="theme-color" content="#205081" />
+
+  <!-- Apple -->
+  <each loop="item in [76, 120, 152, 180]">
+    <link rel="apple-touch-icon" sizes="{{ item }}x{{ item }}" href="/ico/apple-icon-{{ item }}x{{ item }}.png" />
+  </each>
+
+  <!-- Microsoft -->
+  <meta name="msapplication-TileColor" content="#205081" />
+  <meta name="msapplication-TileImage" content="/ico/android-icon-144x144.png" />
+
+  <!-- Facebook -->
+  <meta property="og:title" content="António Almeida, Software Developer, promatik" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/profile-512.jpg" />
+  <meta property="og:description" content="Software Engineer from Porto, Portugal. Studied Computer Graphics and Multimedia Engineer at IPVC. Get to know my work!" />
+  <meta property="og:url" content="https://promatik.pt" />
+  <meta property="fb:admins" content="100000258524385" />
+  <meta property="fb:app_id" content="150154111693861" />
+
+  <!-- Preload -->
+  <link rel="preload" href="index.js" as="script" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav>
+    <include src="views/nav.html"></include>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <include src="views/main-story.html"></include>
+    <hr />
+
+    <include src="views/main-stats.html"></include>
+    <hr />
+
+    <include src="views/main-timeline.html"></include>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <include src="views/footer.html"></include>
+  </footer>
+
+  <!-- SVGs -->
+  <include src="views/defs.svg"></include>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

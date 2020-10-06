@@ -1,0 +1,26 @@
+{
+  "name": "promatik-pt",
+  "version": "0.0.1",
+  "description": "Development project for promatik.pt",
+  "main": "index.html",
+  "scripts": {
+    "start": "del-cli --force ./.cache && del-cli --force ./dist && parcel src/index.html --open",
+    "build": "del-cli --force ./.cache && del-cli --force ./dist && parcel build src/index.html --no-source-maps",
+    "clear": "del-cli --force ./.cache && del-cli --force ./dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "normalize.css": "8.0.1",
+    "parcel-bundler": "^1.12.4",
+    "posthtml": "^0.13.0",
+    "posthtml-expressions": "^1.5.0",
+    "posthtml-include": "^1.4.3",
+    "sass": "^1.26.11"
+  },
+  "keywords": [],
+  "dependencies": {}
+}

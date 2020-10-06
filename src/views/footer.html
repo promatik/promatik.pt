@@ -1,0 +1,46 @@
+<div class="icons color s03">
+  <each loop="item in [
+    {
+      icon: 'mail',
+      label: 'E-Mail',
+      href: 'mailto:promatik@gmail.com'
+    }, 
+    {
+      icon: 'github',
+      label: 'Github',
+      href: 'https://github.com/promatik'
+    }, 
+    {
+      icon: 'stackoverflow',
+      label: 'Stackoverflow',
+      href: 'https://stackoverflow.com/users/1192479/promatik'
+    }, 
+    {
+      icon: 'hackerrank',
+      label: 'Hackerrank',
+      href: 'https://hackerrank.com/promatik'
+    }, 
+    {
+      icon: 'codesignal',
+      label: 'Codesignal',
+      href: 'https://app.codesignal.com/profile/promatik'
+    }
+  ]">
+    <a target="_blank" href="{{ item.href }}" rel="noopener">
+      <div class="icon color g03 link" aria-label="{{ item.label }}">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="#icon-{{ item.icon }}"></use>
+        </svg>
+      </div>
+      <span>{{ item.label }}</span>
+    </a>
+  </each>
+</div>
+
+<div class="copy">
+  <span>Made by promatik</span>
+  <span>/</span>
+  <a href="https://github.com/promatik" class="color c03" target="_blank" rel="noopener">
+    <span>View source</span>
+  </a>
+</div>

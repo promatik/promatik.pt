@@ -1,0 +1,48 @@
+<svg>
+  <path d="M0 0L0 0" />
+</svg>
+
+<div class="container grid">
+  <div class="info color s00">
+    <p>António Almeida, <span id="age">31</span></p>
+    <p>
+      Software Engineer and Web Developer
+      <span class="in"> in </span><br />
+      <span class="location">Porto, Portugal</span>
+    </p>
+  </div>
+  <div class="profile">
+    <picture>
+      <each loop="extension in ['webp', 'jpg']">
+        <source sizes="(max-width: 1280px) 64px, 128px" srcset="
+                /img/profile-64.{{ extension }}   64w,
+                /img/profile-128.{{ extension }} 128w,
+                /img/profile-256.{{ extension }} 256w,
+                /img/profile-512.{{ extension }} 512w
+              " type="image/{{ extension }}" />
+      </each>
+      <img src="/img/profile-128.jpg" alt="profile picture" />
+    </picture>
+  </div>
+  <div class="links">
+
+    <each loop="item in [ 
+      {
+        icon: 'cv',
+        label: 'Europass',
+        href: 'data/cv-antonio-almeida-20201004.pdf'
+      }, 
+      {
+        icon: 'linkedin',
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/promatik/'
+      }
+    ]">
+      <a target="_blank" href="{{ item.href }}" title="{{ item.label }}" rel="noopener">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use xlink:href="#icon-{{ item.icon }}"></use>
+        </svg>
+      </a>
+    </each>
+  </div>
+</div>

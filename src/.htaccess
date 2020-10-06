@@ -1,0 +1,64 @@
+<IfModule mod_mime.c>
+    # Add rare mime types
+    AddType application/javascript          js
+    AddType application/x-font-woff         woff
+    AddType image/svg+xml                   svg svgz 
+    AddEncoding gzip                        svgz
+</Ifmodule>
+
+<IfModule mod_filter.c>
+    # gzip all this file types
+    AddOutputFilterByType DEFLATE "application/atom+xml"
+    AddOutputFilterByType DEFLATE "application/javascript"
+    AddOutputFilterByType DEFLATE "application/json"
+    AddOutputFilterByType DEFLATE "application/ld+json"
+    AddOutputFilterByType DEFLATE "application/manifest+json"
+    AddOutputFilterByType DEFLATE "application/rdf+xml"
+    AddOutputFilterByType DEFLATE "application/rss+xml"
+    AddOutputFilterByType DEFLATE "application/schema+json"
+    AddOutputFilterByType DEFLATE "application/x-javascript"
+    AddOutputFilterByType DEFLATE "application/x-web-app-manifest+json"
+    AddOutputFilterByType DEFLATE "application/xhtml+xml"
+    AddOutputFilterByType DEFLATE "application/xml"
+    AddOutputFilterByType DEFLATE "application/x-font-woff"
+    AddOutputFilterByType DEFLATE "font/collection"
+    AddOutputFilterByType DEFLATE "image/bmp"
+    AddOutputFilterByType DEFLATE "image/svg+xml"
+    AddOutputFilterByType DEFLATE "image/x-icon"
+    AddOutputFilterByType DEFLATE "text/cache-manifest"
+    AddOutputFilterByType DEFLATE "text/css"
+    AddOutputFilterByType DEFLATE "text/html"
+    AddOutputFilterByType DEFLATE "text/javascript"
+    AddOutputFilterByType DEFLATE "text/plain"
+    AddOutputFilterByType DEFLATE "text/xml"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Options +FollowSymLinks
+
+    # HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+
+    # 28 DAYS
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|webp|png|gif|js|swf|woff|woff2|svg)$">
+        Header set Cache-Control "max-age=2419200, public"
+    </filesMatch>
+
+    # 14 DAYS
+    <filesMatch "\.(css|js|html|htm|txt)$">
+        Header set Cache-Control "max-age=1209600, public, must-revalidate"
+        #Header set Cache-Control "max-age=0, public, must-revalidate"
+    </filesMatch>
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(^#.*#|\.(bk|bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>

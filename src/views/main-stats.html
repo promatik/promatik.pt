@@ -1,0 +1,64 @@
+<div class="stats color s01">
+  <h1>Stats</h1>
+  <p>
+    Since early age I'm passionate about <em>statistics</em>, being
+    spreadsheets one of my hobbies. <br />Here you have some cool stats
+    about me.
+  </p>
+  <div class="grid">
+    <each loop="item in ['stackoverflow', 'github', 'car', 'airplane', 'map', 'profile']">
+      <div data="{{ item }}">
+        <div>
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="icon">
+            <use xlink:href="#icon-{{ item }}"></use>
+          </svg>
+          <div class="loading"></div>
+          <p style="opacity: 0;">
+
+            <switch expression="item">
+              <case n="'stackoverflow'">
+                I'm quite active on StackOverflow, I was there
+                <em>some minutes ago</em>. <br />
+                I have <em>8000</em> reputation points, <em>5</em> gold badges,
+                <em>50</em> silver and <em>50</em> bronze.
+              </case>
+
+              <case n="'github'">
+                On GitHub, I was starred <em>135</em> times, and forked
+                <em>47</em>, all this spread over <em>38</em> public repos and
+                <em>13</em> gists. <br />
+                I belong to <em>3</em> organizations.
+              </case>
+
+              <case n="'car'">
+                I drove <em>185.000</em> km, <br />spending a total of
+                <em>3.000</em> hours driving, almost <em>1.2</em>% of my life.
+              </case>
+
+              <case n="'airplane'">
+                I flew <em>61 759</em> km in <em>14</em> flights, <br />
+                visiting <em>11</em> different countries, <em>3</em> continents,
+                <em>5</em> islands, both hemispheres.
+              </case>
+
+              <case n="'map'">
+                While living most of my time in Portugal, exactly
+                <em>10 733</em> days, <br />
+                I was <em>157</em> days abroad, nearly <em>1.50</em>% of my
+                life, between working and traveling.
+              </case>
+
+              <case n="'profile'">
+                Until now, I spent <em>31.657</em>% of my life sleeping,
+                <em>10.41</em>% eating, <em>11.62</em>% working, <em>18.41</em>%
+                studying, <em>8.15</em>% exercising, <em>4.12</em>% commuting and
+                <em>3.42</em>% coding on my free time.
+              </case>
+            </switch>
+
+          </p>
+        </div>
+      </div>
+    </each>
+  </div>
+</div>

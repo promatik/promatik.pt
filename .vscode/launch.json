@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "launch promatik.pt",
+      "runtimeArgs": [
+        "parcel",
+        "index.html",
+        "--open",
+      ],
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/parcel.cmd"
+      },
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "build promatik.pt",
+      "runtimeArgs": [
+        "parcel",
+        "build",
+        "index.html",
+        "--no-source-maps",
+      ],
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/parcel.cmd"
+      },
+    },
+  ],
+}
