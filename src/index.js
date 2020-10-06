@@ -19,7 +19,7 @@ const app = {
     app.setAge();
 
     // Stats
-    // app.initStats();
+    app.initStats();
 
     // Nav animation init
     app.navAnimation();
