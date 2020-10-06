@@ -23,8 +23,9 @@
 
   <!-- App -->
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png" />
+  <each loop="item in [32, 96, 16]">
+    <link rel="icon" type="image/png" sizes="{{ item }}x{{ item }}" href="/ico/favicon-{{ item }}x{{ item }}.png" />
+  </each>
   <meta name="application-name" content="promatik" />
   <meta name="apple-mobile-web-app-title" content="promatik" />
   <meta name="theme-color" content="#205081" />
@@ -50,6 +51,8 @@
   <!-- Preload -->
   <link rel="preload" href="index.js" as="script" />
   <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="preconnect" href="https://api.stackexchange.com" />
+  <link rel="preconnect" href="https://api.github.com" />
 </head>
 
 <body>
