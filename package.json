@@ -4,9 +4,10 @@
   "description": "Development project for promatik.pt",
   "main": "index.html",
   "scripts": {
-    "start": "del-cli --force ./.cache && del-cli --force ./dist && parcel src/index.html --open",
-    "build": "del-cli --force ./.cache && del-cli --force ./dist && parcel build src/index.html --no-source-maps",
-    "clear": "del-cli --force ./.cache && del-cli --force ./dist"
+    "start": "npm run clear && parcel src/index.html --open",
+    "build": "npm run clear && parcel build src/index.html --no-source-maps && npm run copy-public",
+    "clear": "del-cli --force ./.cache && del-cli --force ./dist",
+    "copy-public": "cp -r ./src/public/* ./dist"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -19,7 +20,7 @@
     "posthtml": "^0.13.0",
     "posthtml-expressions": "^1.5.0",
     "posthtml-include": "^1.4.3",
-    "sass": "^1.26.11"
+    "sass": "^1.26.12"
   },
   "keywords": [],
   "dependencies": {}
