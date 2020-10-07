@@ -16,6 +16,7 @@
     "no-bitwise": "off",
     "no-param-reassign": "off",
     "no-return-assign": "off",
+    "no-restricted-globals": "off",
     "arrow-parens": [
       "error",
       "as-needed"
