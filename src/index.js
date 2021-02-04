@@ -9,7 +9,6 @@ const blob = timeline.querySelector('.blob');
 const cards = document.querySelectorAll('.item');
 const dots = [];
 const configs = { speed: 8, details: 18 };
-const birth = 6168087e5;
 let animTime = 0;
 let currentColor = 0;
 
@@ -115,27 +114,22 @@ const app = {
         app.onScroll.timeline();
         app.onScroll.sections();
       })();
+
+      cards.forEach(card => card.classList.remove('on'));
     },
 
     timeline: () => {
-      const pos = Math.max(0, window.pageYOffset - timeline.offsetTop + nav.offsetHeight + 60);
-      const max = document.body.offsetHeight
-        - window.innerHeight
-        - timeline.offsetTop
-        + nav.offsetHeight
-        + 60;
+      const bottom = nav.offsetHeight - timeline.offsetTop + 60;
+      const pos = Math.max(0, window.pageYOffset + bottom);
+      const max = document.body.offsetHeight - window.innerHeight + bottom;
       const percent = timeline.offsetHeight * (pos / (max + 200));
 
       for (let i = 0; i < cards.length; i += 1) {
         if (cards[i].offsetTop > percent) {
           blob.style.setProperty('--position', `${dots[i].offsetTop || 0}px`);
 
-          cards.forEach(item => item.classList.remove('active'));
-          cards[i].classList.add('active');
-
-          dots.forEach(dot => dot.classList.remove('active'));
-          dots[i].classList.add('active');
-
+          cards.forEach((card, j) => card.classList.toggle('active', i === j));
+          dots.forEach((dot, j) => dot.classList.toggle('active', i === j));
           break;
         }
       }
@@ -182,7 +176,8 @@ const app = {
   },
 
   setAge: () => {
-    window.age.innerHTML = new Date(Date.now() - 6167232e5).getUTCFullYear() - 1970;
+    // eslint-disable-next-line max-len
+    window.age.innerHTML = new Date((data.death || Date.now()) - data.birth).getUTCFullYear() - 1970;
   },
 
   initStats: () => {
@@ -202,7 +197,7 @@ const app = {
     const numberFixed = n => n.toFixed(2).replace(/\.?0+$/, '');
 
     // Current age
-    const age = new Date().getTime() - birth;
+    const age = (data.death || new Date().getTime()) - data.birth;
 
     // Stackoverflow
     fetch(
@@ -357,10 +352,15 @@ const app = {
 
     initClock: () => {
       setInterval(() => {
-        window.elapsed.innerHTML = (((new Date().getTime() - birth) / 1e3) | 0)
+        window.elapsed.innerHTML = ((((data.death || new Date().getTime()) - data.birth) / 1e3) | 0)
           .toLocaleString()
           .replace(/,/g, ' ');
       }, 1e3);
+
+      if (data.death) {
+        const p = window.elapsed.closest('p');
+        p.innerHTML = p.innerHTML.replace("it's been", 'it was');
+      }
     },
 
     setPositions: () => {

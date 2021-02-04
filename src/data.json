@@ -1,4 +1,6 @@
 {
+  "birth": 616808700000,
+  "death": 0,
   "stats": {
     "car": {
       "km": {
@@ -16,11 +18,12 @@
         "Toyota Auris 2": 15000,
         "Toyota Auris 3": 18000,
         "Toyota Auris 4": 27454,
-        "Toyota Corolla": 15000
+        "Toyota Corolla 1": 15182,
+        "Toyota Corolla 2": 2000
       },
       "current_average": {
-        "value": 16,
-        "since": "2020-10-10"
+        "value": 8,
+        "since": "2021-02-01"
       }
     },
     "airplane": {
