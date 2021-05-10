@@ -14,21 +14,22 @@
         "Fiat Panda": 628,
         "Fiat 500 1": 430,
         "Fiat 500 2": 1220,
+        "Opel Corsa 2": 560,
         "Toyota Auris 1": 25000,
         "Toyota Auris 2": 15000,
         "Toyota Auris 3": 18000,
         "Toyota Auris 4": 27454,
         "Toyota Corolla 1": 15182,
-        "Toyota Corolla 2": 2000
+        "Toyota Corolla 2": 3000
       },
       "current_average": {
-        "value": 8,
-        "since": "2021-02-01"
+        "value": 11,
+        "since": "2021-05-01"
       }
     },
     "airplane": {
-      "km": 85289,
-      "flights": 21,
+      "km": 90976,
+      "flights": 23,
       "countries": [
         "portugal",
         "spain",
@@ -57,7 +58,9 @@
         "malta",
         "poros",
         "idra",
-        "kefalonia"
+        "kefalonia",
+        "terceira",
+        "madeira"
       ]
     },
     "map": {
@@ -118,9 +121,16 @@
         },
         {
           "range": [
-            "2011-09-01"
+            "2011-09-01",
+            "2020-03-01"
           ],
           "average": 420
+        },
+        {
+          "range": [
+            "2020-03-01"
+          ],
+          "average": 440
         }
       ],
       "eating": [
@@ -141,9 +151,16 @@
       "working": [
         {
           "range": [
-            "2011-09-15"
+            "2011-09-15",
+            "2020-10-14"
           ],
-          "average": 345
+          "average": 298
+        },
+        {
+          "range": [
+            "2020-10-15"
+          ],
+          "average": 382
         }
       ],
       "studing": [
@@ -152,21 +169,21 @@
             "1995-09-01",
             "2004-09-01"
           ],
-          "average": 3.25
+          "average": 195
         },
         {
           "range": [
             "2004-09-01",
             "2008-09-01"
           ],
-          "average": 3.42
+          "average": 205
         },
         {
           "range": [
             "2008-09-01",
             "2011-07-01"
           ],
-          "average": 7
+          "average": 420
         }
       ],
       "exercising": [
@@ -175,20 +192,27 @@
             "1989-07-18",
             "2008-09-01"
           ],
-          "average": 2
+          "average": 120
         },
         {
           "range": [
             "2014-03-01",
             "2015-06-01"
           ],
-          "average": 0.75
+          "average": 40
         },
         {
           "range": [
-            "2017-02-01"
+            "2017-02-01",
+            "2021-01-01"
           ],
-          "average": 0.85
+          "average": 50
+        },
+        {
+          "range": [
+            "2021-05-01"
+          ],
+          "average": 40
         }
       ],
       "commuting": [
