@@ -20,16 +20,16 @@
         "Toyota Auris 3": 18000,
         "Toyota Auris 4": 27454,
         "Toyota Corolla 1": 15182,
-        "Toyota Corolla 2": 3000
+        "Toyota Corolla 2": 5500
       },
       "current_average": {
         "value": 11,
-        "since": "2021-05-01"
+        "since": "2021-06-15"
       }
     },
     "airplane": {
-      "km": 90976,
-      "flights": 23,
+      "km": 94012,
+      "flights": 24,
       "countries": [
         "portugal",
         "spain",
@@ -60,7 +60,9 @@
         "idra",
         "kefalonia",
         "terceira",
-        "madeira"
+        "madeira",
+        "sardenha",
+        "la maddalena"
       ]
     },
     "map": {
@@ -85,7 +87,8 @@
         6,
         4,
         5,
-        5
+        5,
+        8
       ],
       "living_abroad_since": ""
     },
