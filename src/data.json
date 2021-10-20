@@ -15,21 +15,24 @@
         "Fiat 500 1": 430,
         "Fiat 500 2": 1220,
         "Opel Corsa 2": 560,
+        "Ford Fiesta": 1390,
+        "Dacia Duster": 2136,
+        "Ssangyong Tivoli": 1197,
         "Toyota Auris 1": 25000,
         "Toyota Auris 2": 15000,
         "Toyota Auris 3": 18000,
         "Toyota Auris 4": 27454,
         "Toyota Corolla 1": 15182,
-        "Toyota Corolla 2": 5500
+        "Toyota Corolla 2": 8600
       },
       "current_average": {
-        "value": 11,
-        "since": "2021-06-15"
+        "value": 28,
+        "since": "2021-10-20"
       }
     },
     "airplane": {
-      "km": 94012,
-      "flights": 24,
+      "km": 102441,
+      "flights": 25,
       "countries": [
         "portugal",
         "spain",
@@ -44,7 +47,8 @@
         "scotland",
         "turkey",
         "hungary",
-        "andorra"
+        "andorra",
+        "islândia"
       ],
       "continents": [
         "europe",
@@ -62,7 +66,8 @@
         "terceira",
         "madeira",
         "sardenha",
-        "la maddalena"
+        "la maddalena",
+        "islândia"
       ]
     },
     "map": {
@@ -83,11 +88,12 @@
         4,
         6,
         10,
-        4,
+        5,
         6,
-        4,
         5,
-        5,
+        9,
+        8,
+        9,
         8
       ],
       "living_abroad_since": ""
