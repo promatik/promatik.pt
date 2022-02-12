@@ -18,6 +18,7 @@
         "Ford Fiesta": 1390,
         "Dacia Duster": 2136,
         "Ssangyong Tivoli": 1197,
+        "Spacestar/Smart/C1": 670,
         "Toyota Auris 1": 25000,
         "Toyota Auris 2": 15000,
         "Toyota Auris 3": 18000,
@@ -28,12 +29,12 @@
       },
       "current_average": {
         "value": 38,
-        "since": "2021-10-20"
+        "since": "2022-02-10"
       }
     },
     "airplane": {
-      "km": 102441,
-      "flights": 25,
+      "km": 106684,
+      "flights": 26,
       "countries": [
         "portugal",
         "spain",
@@ -49,7 +50,7 @@
         "turkey",
         "hungary",
         "andorra",
-        "islândia"
+        "iceland"
       ],
       "continents": [
         "europe",
@@ -68,7 +69,9 @@
         "madeira",
         "sardenha",
         "la maddalena",
-        "islândia"
+        "iceland",
+        "flores",
+        "corvo"
       ]
     },
     "map": {
@@ -95,7 +98,8 @@
         9,
         8,
         9,
-        8
+        8,
+        25
       ],
       "living_abroad_since": ""
     },
