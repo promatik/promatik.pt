@@ -1,4 +1,4 @@
-const VERSION = 'promatik-0.0.1';
+const VERSION = 'promatik-0.0.2';
 
 const fetchAndCache = async request => {
   const result = await fetch(request);
@@ -7,7 +7,7 @@ const fetchAndCache = async request => {
 };
 
 self.onfetch = e => {
-  if (e.request.url.match(/\/data|\/pdf|google-analytics.com|googletagmanager.com/)) return;
+  if (e.request.url.match(/\/data|\/pdf|google-analytics.com|googletagmanager.com|chrome-extension/)) return;
 
   e.respondWith(navigator.onLine && (e.request.destination === 'document' || !e.request.url.match(/https?:\/\/promatik.pt/))
     ? fetchAndCache(e.request)
