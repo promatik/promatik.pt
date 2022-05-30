@@ -19,22 +19,24 @@
         "Dacia Duster": 2136,
         "Ssangyong Tivoli": 1197,
         "Spacestar/Smart/C1": 670,
+        "Dacia Logan": 1470,
+        "Fiat Panda 2": 709,
         "Toyota Auris 1": 25000,
         "Toyota Auris 2": 15000,
         "Toyota Auris 3": 18000,
         "Toyota Auris 4": 27454,
         "Toyota Corolla 1": 15182,
         "Toyota Corolla 2": 11265,
-        "Toyota Corolla 3": 1000
+        "Toyota Corolla 3": 10800
       },
       "current_average": {
         "value": 38,
-        "since": "2022-02-10"
+        "since": "2022-05-30"
       }
     },
     "airplane": {
-      "km": 106684,
-      "flights": 26,
+      "km": 113215,
+      "flights": 28,
       "countries": [
         "portugal",
         "spain",
@@ -99,7 +101,10 @@
         8,
         9,
         8,
-        25
+        25,
+        8,
+        8,
+        4
       ],
       "living_abroad_since": ""
     },
