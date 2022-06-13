@@ -1,5 +1,5 @@
 import './styles.scss';
-import '../node_modules/normalize.css/normalize.css';
+import 'normalize.css';
 import * as data from './data.json';
 
 const nav = document.querySelector('nav');
@@ -8,7 +8,7 @@ const timeline = document.querySelector('.timeline');
 const blob = timeline.querySelector('.blob');
 const cards = document.querySelectorAll('.item');
 const dots = [];
-const configs = { speed: 8, details: 18 };
+const configs = { speed: 8, details: 14 };
 let animTime = 0;
 let currentColor = 0;
 
@@ -22,6 +22,7 @@ const app = {
 
     // Nav animation init
     app.navAnimation();
+    nav.querySelector('svg').classList.remove('loading');
 
     // Read more / less
     app.initReadMoreLinks();
@@ -81,7 +82,7 @@ const app = {
       } else {
         const more = document.createElement('p');
         more.className = 'read-more';
-        read.querySelectorAll('div')[0]?.insertAdjacentElement('afterend', more);
+        if (!read.querySelector('.read-more')) read.querySelectorAll('div')[0]?.insertAdjacentElement('afterend', more);
 
         const less = document.createElement('p');
         less.className = 'read-less';
@@ -184,7 +185,7 @@ const app = {
     const { stats } = data;
 
     // Fill function
-    const fillStatsRow = (row, rows) => {
+    const fillStatsRow = (row, rows = []) => {
       const box = document.querySelector(`.stats [data="${row}"]`);
       box
         .querySelectorAll('em')
@@ -220,15 +221,17 @@ const app = {
       const value = (diff / divider) | 0;
 
       fillStatsRow('stackoverflow', [
-        value > 0
-          ? `${value} ${unit}${value !== 1 ? 's' : ''} ago`
-          : 'just now',
         json.items[0].reputation,
         json.items[0].badge_counts.gold,
         json.items[0].badge_counts.silver,
         json.items[0].badge_counts.bronze,
+        value > 0
+          ? `${value} ${unit}${value !== 1 ? 's' : ''} ago`
+          : 'just now',
       ]);
-    }));
+    })).catch(() => {
+      fillStatsRow('stackoverflow');
+    });
 
     // Github
     Promise.all(
@@ -247,6 +250,8 @@ const app = {
         responses[0].public_gists,
         responses[1].length,
       ]);
+    }).catch(() => {
+      fillStatsRow('github');
     });
 
     // Car
