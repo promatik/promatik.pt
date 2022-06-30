@@ -144,6 +144,21 @@ hr {
   }
 }
 
+tag {
+  display: inline-block;
+  color: #33658a;
+  background-color: #c5dcefa0;
+  padding: 0 0.25em;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+  font-size: 1.25rem;
+  cursor: default;
+
+  &:hover {
+    background-color: #a9cbeaa0;
+  }
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -563,21 +578,6 @@ main {
           a {
             color: #33658a;
             text-decoration: underline;
-          }
-
-          tag {
-            display: inline-block;
-            color: #33658a;
-            background-color: #e1ecf4;
-            padding: 0 0.25em;
-            border-radius: 2px;
-            transition: background-color 0.2s;
-            font-size: 1.25rem;
-            cursor: default;
-
-            &:hover {
-              background-color: #cee0ed;
-            }
           }
 
           code {
