@@ -7,7 +7,7 @@
     "start": "npm run clear-cache && parcel src/index.html --open",
     "build": "npm run clear-cache && parcel build src/index.html --no-source-maps && npm run copy-public",
     "clear-cache": "del-cli --force ./.cache && del-cli --force ./dist",
-    "copy-public": "cp -r ./src/public/* ./dist"
+    "copy-public": "cp -r ./src/public/* ./dist && cp ./src/service-worker.js ./dist"
   },
   "dependencies": {
     "normalize.css": "8.0.1"

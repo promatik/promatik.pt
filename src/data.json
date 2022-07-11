@@ -3,109 +3,21 @@
   "death": 0,
   "stats": {
     "car": {
-      "km": {
-        "Renault Clio": 5000,
-        "Opel Corsa": 93198,
-        "Seat Mii 1": 680,
-        "Nissan Micra": 570,
-        "Peugeot 107": 330,
-        "Seat Mii 2": 920,
-        "Peugeot 208": 820,
-        "Fiat Panda": 628,
-        "Fiat 500 1": 430,
-        "Fiat 500 2": 1220,
-        "Opel Corsa 2": 560,
-        "Ford Fiesta": 1390,
-        "Dacia Duster": 2136,
-        "Ssangyong Tivoli": 1197,
-        "Spacestar/Smart/C1": 670,
-        "Dacia Logan": 1470,
-        "Fiat Panda 2": 709,
-        "Toyota Auris 1": 25000,
-        "Toyota Auris 2": 15000,
-        "Toyota Auris 3": 18000,
-        "Toyota Auris 4": 27454,
-        "Toyota Corolla 1": 15182,
-        "Toyota Corolla 2": 11265,
-        "Toyota Corolla 3": 10800
-      },
+      "km": 237161,
       "current_average": {
         "value": 38,
-        "since": "2022-05-30"
+        "since": "2022-07-01"
       }
     },
     "airplane": {
-      "km": 113215,
-      "flights": 28,
-      "countries": [
-        "portugal",
-        "spain",
-        "france",
-        "england",
-        "brazil",
-        "morroco",
-        "greece",
-        "italy",
-        "malta",
-        "netherlands",
-        "scotland",
-        "turkey",
-        "hungary",
-        "andorra",
-        "iceland"
-      ],
-      "continents": [
-        "europe",
-        "america",
-        "africa",
-        "asia"
-      ],
-      "islands": [
-        "sao miguel",
-        "palma maiorca",
-        "malta",
-        "poros",
-        "idra",
-        "kefalonia",
-        "terceira",
-        "madeira",
-        "sardenha",
-        "la maddalena",
-        "iceland",
-        "flores",
-        "corvo"
-      ]
+      "km": 119165,
+      "flights": 29,
+      "countries": 16,
+      "continents": 4,
+      "islands": 13
     },
     "map": {
-      "abroad": [
-        25,
-        57,
-        7,
-        6,
-        4,
-        6,
-        5,
-        7,
-        6,
-        9,
-        4,
-        5,
-        6,
-        4,
-        6,
-        10,
-        5,
-        6,
-        5,
-        9,
-        8,
-        9,
-        8,
-        25,
-        8,
-        8,
-        4
-      ],
+      "abroad": 280,
       "living_abroad_since": ""
     },
     "profile": {

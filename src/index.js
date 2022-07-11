@@ -255,9 +255,9 @@ const app = {
     });
 
     // Car
-    const km = Object.values(stats.car.km).reduce((a, b) => a + b)
+    const km = stats.car.km
       + ((Date.now() - new Date(stats.car.current_average.since)) / 8784e4)
-        * stats.car.current_average.value;
+      * stats.car.current_average.value;
     const hours = km / 62;
 
     fillStatsRow('car', [
@@ -270,14 +270,14 @@ const app = {
     fillStatsRow('airplane', [
       numberFormat(stats.airplane.km),
       stats.airplane.flights,
-      stats.airplane.countries.length,
-      stats.airplane.continents.length,
-      stats.airplane.islands.length,
+      stats.airplane.countries,
+      stats.airplane.continents,
+      stats.airplane.islands,
     ]);
 
     // Map
     const days = age / 864e5;
-    let abroad = Object.values(stats.map.abroad).reduce((a, b) => a + b);
+    let { abroad } = stats.map;
     if (stats.map.living_abroad_since) {
       const d = (new Date() - new Date(stats.map.living_abroad_since)) / 864e5;
       abroad += d;
