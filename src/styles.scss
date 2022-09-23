@@ -25,6 +25,9 @@ html {
 a {
   text-decoration: none;
 }
+.hidden {
+  display: none;
+}
 
 body {
   overflow-x: hidden;
@@ -976,3 +979,47 @@ footer {
   }
 }
 
+body.x {
+  background-image: url('img/pattern.png');
+  padding-top: 192px;
+
+  nav > svg {
+    display: none;
+  }
+
+  .read div:first-child > p:last-child:after {
+    content: initial;
+  }
+
+  nav {
+    background-image: url('img/pattern-header.png');
+    background-repeat: repeat-x;
+    text-shadow: 1px 1px 1px rgb(255 255 255 / 50%);
+  }
+
+  nav .grid {
+    --pic-size: 172px;
+  }
+
+  @media only screen and (max-width: 960px) {
+    nav .grid {
+      --pic-size: 110px;
+    }
+  }
+
+  nav .grid .info p {
+    color: #222;
+  }
+
+  nav .grid .links a svg {
+    fill: #222;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .paint.hidden {
+    display: initial;
+  }
+}

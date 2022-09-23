@@ -35,6 +35,8 @@ const app = {
 
     // On scroll event
     app.onScroll.init();
+
+    document.addEventListener('keypress', e => document.body.classList.toggle(e.key));
   },
 
   navAnimation: () => {
