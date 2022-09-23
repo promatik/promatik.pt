@@ -4,11 +4,12 @@
 
 <div class="container grid">
   <div class="info color s00">
-    <p>António Almeida, <span id="age">31</span></p>
+    <p>António Almeida, <span id="age">33</span></p>
     <p>
       Software Engineer and Web Developer
-      <span class="in"> in </span><br />
-      <span class="location">Porto, Portugal</span>
+      <span class="in"> from</span><br />
+      <span class="location">Porto, Portugal.</span>
+      <span class="current"></span>
     </p>
   </div>
   <div class="profile">
@@ -26,20 +27,20 @@
   </div>
   <div class="links">
 
-    <each loop="item in [ 
+    <each loop="item in [
       {
         icon: 'cv',
         label: 'Europass',
         href: 'data/cv-antonio-almeida.pdf'
-      }, 
+      },
       {
         icon: 'linkedin',
         label: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/promatik/'
+        href: '//linkedin.com/in/promatik/'
       }
     ]">
       <a target="_blank" href="{{ item.href }}" title="{{ item.label }}" rel="noopener">
-        <svg xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg>
           <use xlink:href="#icon-{{ item.icon }}"></use>
         </svg>
       </a>

@@ -9,7 +9,7 @@
     <each loop="item in ['github', 'stackoverflow', 'car', 'airplane', 'map', 'profile']">
       <div data="{{ item }}">
         <div>
-          <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="icon">
+          <svg class="icon">
             <use xlink:href="#icon-{{ item }}"></use>
           </svg>
           <div class="loading"></div>
@@ -17,12 +17,12 @@
 
             <switch expression="item">
               <case n="'stackoverflow'">
-                I have <em>9055</em> reputation points on StackOverflow, <em>8</em> gold badges,
+                I have <em>9055</em> reputation points on <a href="//stackoverflow.com/users/1192479/promatik" target="_blank">StackOverflow</a>, <em>8</em> gold badges,
                 <em>58</em> silver and <em>63</em> bronze. Actually, I was there <em>some minutes ago</em>.
               </case>
 
               <case n="'github'">
-                On GitHub, I was starred <em>168</em> times, and forked
+                On <a href="//github.com/promatik" target="_blank">GitHub</a>, I was starred <em>168</em> times, and forked
                 <em>66</em>, all this spread over <em>52</em> public repos and
                 <em>13</em> gists. <br />
                 I belong to <em>8</em> organizations.

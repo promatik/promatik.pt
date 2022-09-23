@@ -1,12 +1,17 @@
-$background: #f0f0e9;
-$color1A: #44a08d;
-$color1B: #093637;
-$color1Mid: #2e796e;
-$color2A: #2b5876;
-$color2B: #464a78;
-$color3A: #642b72;
-$color3B: #a83c6e;
-$timelineBackground: #f6f6f2;
+:root {
+  --bg: #f0f0e9;
+  --bg0: #f0f0e900;
+  --white: #fff;
+  --color1A: #44a08d;
+  --color1B: #093637;
+  --color1Mid: #2e796e;
+  --color2A: #2b5876;
+  --color2B: #464a78;
+  --color3A: #642b72;
+  --color3B: #a83c6e;
+  --timeline: #f6f6f2;
+  --timeline0: #f6f6f200;
+}
 
 html {
   font-size: 62.5%;
@@ -23,7 +28,7 @@ a {
 
 body {
   overflow-x: hidden;
-  background-color: $background;
+  background-color: var(--bg);
   padding-top: 152px;
   font-weight: normal;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -48,7 +53,7 @@ hr {
   width: 24rem;
   height: 1px !important;
   border: 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--white);
   margin: 4rem auto;
   background-color: #aaa;
 }
@@ -60,7 +65,7 @@ hr {
   clip-path: circle(50% at 50% 50%);
   transition: clip-path 0.2s;
   border-radius: 50%;
-  fill: $background;
+  fill: var(--bg);
 
   display: inline-block;
   margin: 1rem;
@@ -93,54 +98,54 @@ hr {
 
 .color {
   &.s00 ::selection {
-    background: #fff;
-    color: $color1A;
+    background: var(--white);
+    color: var(--color1A);
     text-shadow: none;
   }
 
   &.c01 {
-    color: $color1A;
+    color: var(--color1A);
   }
   &.b01 {
-    background-color: $color1A;
+    background-color: var(--color1A);
   }
   &.s01 ::selection {
-    background: darken($color1A, 5);
-    color: #fff;
+    background: var(--color1A);
+    color: var(--white);
     text-shadow: none;
   }
   &.g01 {
-    background-image: linear-gradient(20deg, $color1B, $color1A);
+    background-image: linear-gradient(20deg, var(--color1B), var(--color1A));
   }
 
   &.c02 {
-    color: $color2A;
+    color: var(--color2A);
   }
   &.b02 {
-    background-color: $color2A;
+    background-color: var(--color2A);
   }
   &.s02 ::selection {
-    background: darken($color2A, 5);
-    color: #fff;
+    background: var(--color2A);
+    color: var(--white);
     text-shadow: none;
   }
   &.g02 {
-    background-image: linear-gradient(25deg, $color2A, $color2B);
+    background-image: linear-gradient(25deg, var(--color2A), var(--color2B));
   }
 
   &.c03 {
-    color: $color3A;
+    color: var(--color3A);
   }
   &.b03 {
-    background-color: $color3A;
+    background-color: var(--color3A);
   }
   &.s03 ::selection {
-    background: darken($color3A, 5);
-    color: #fff;
+    background: var(--color3A);
+    color: var(--white);
     text-shadow: none;
   }
   &.g03 {
-    background-image: linear-gradient(20deg, $color3A, $color3B);
+    background-image: linear-gradient(20deg, var(--color3A), var(--color3B));
   }
 }
 
@@ -174,7 +179,7 @@ nav {
     fill: url("#gradient");
 
     &.loading {
-      background-color: $color1Mid;
+      background-color: var(--color1Mid);
     }
   }
 
@@ -205,8 +210,8 @@ nav {
       --border: 5px;
       width: var(--pic-size);
       height: var(--pic-size);
-      background-color: #fff;
-      border: var(--border) solid white;
+      background-color: var(--white);
+      border: var(--border) solid var(--white);
       border-radius: calc(var(--pic-size) / 2);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       overflow: hidden;
@@ -265,7 +270,7 @@ nav {
 
   div:first-child > p:last-child:after {
     content: " ";
-    background-image: linear-gradient(90deg, rgba($background, 0), $background 75%);
+    background-image: linear-gradient(90deg, var(--bg0), var(--bg) 75%);
     width: 50%;
     height: 2.16rem;
     position: absolute;
@@ -314,13 +319,13 @@ main {
       & > div {
         position: relative;
         overflow: hidden;
-        background-color: #ffffff77;
+        background-color: #fff7;
         border-radius: 3px;
         padding: 6px 1.8rem;
         cursor: default;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
         transition: color 0.25s;
-        border: 1px solid #fff;
+        border: 1px solid var(--white);
         height: 100%;
         min-height: 12.75rem;
 
@@ -369,18 +374,20 @@ main {
           position: absolute;
           top: 1.725rem;
           left: calc(50% - (var(--size) / 2));
-          background: $color1A;
+          background: var(--color1A);
           height: var(--size);
           width: var(--size);
           border-radius: calc(var(--size) / 2);
           transition: transform 0.25s ease-out, opacity 0.2s;
-          background-image: radial-gradient($color1A, $color1B 175%);
+          background-image: radial-gradient(var(--color1A), var(--color1B) 175%);
           pointer-events: none;
           opacity: 0;
         }
 
-        & > div {
-          pointer-events: none;
+        a {
+          color: var(--color1B);
+          transition: color 0.25s;
+          text-decoration: underline;
         }
 
         &.active {
@@ -393,11 +400,15 @@ main {
         }
 
         &:hover {
-          color: #fff;
+          color: var(--white);
           border: 1px solid transparent;
 
+          a {
+            color: var(--white);
+          }
+
           .icon {
-            fill: #fff;
+            fill: var(--white);
           }
 
           &:before {
@@ -472,7 +483,7 @@ main {
 
           &.active {
             transform: scale(1.25);
-            background-color: $color2A;
+            background-color: var(--color2A);
           }
         }
       }
@@ -500,11 +511,11 @@ main {
         .back {
           min-height: 10rem;
           border: 1px solid #ddd;
-          border-top: 2px solid $color2A;
+          border-top: 2px solid var(--color2A);
           padding: 0.4rem 2rem;
           height: fit-content;
           border-radius: 2px;
-          background-color: $timelineBackground;
+          background-color: var(--timeline);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0);
           transition: background-color 0.2s, box-shadow 0.4s, transform 1.2s;
           transform: translateY(var(--translate-y)) perspective(720px) rotateY(calc(0deg + var(--rotate-y)));
@@ -518,7 +529,7 @@ main {
           width: 100%;
           top: 0;
           transform: perspective(720px) rotateY(calc(180deg + var(--rotate-y)));
-          background-color: $timelineBackground;
+          background-color: var(--timeline);
           backface-visibility: hidden;
         }
 
@@ -606,12 +617,12 @@ main {
         left: 50%;
         top: 2rem;
         width: 1px;
-        background-image: linear-gradient(to bottom, $background 0%, #ddd 5%, #ddd 95%, $background 100%);
+        background-image: linear-gradient(to bottom, var(--bg) 0%, #ddd 5%, #ddd 95%, var(--bg) 100%);
       }
 
       .read {
         div:first-child > p:last-child:after {
-          background-image: linear-gradient(90deg, rgba($timelineBackground, 0), $timelineBackground 75%);
+          background-image: linear-gradient(90deg, var(--timeline0), var(--timeline) 75%);
         }
       }
     }
@@ -645,7 +656,7 @@ main {
     h1 {
       text-transform: uppercase;
       font-size: 1.5rem;
-      text-shadow: 0 1px 0 #fff;
+      text-shadow: 0 1px 0 var(--white);
     }
 
     em {
@@ -687,7 +698,7 @@ footer {
         background-color: rgba(0, 0, 0, 0.8);
         border-radius: 3px;
         padding: 0.3rem 1rem;
-        color: #fff;
+        color: var(--white);
         font-family: sans-serif;
         font-size: 1.2rem;
       }
@@ -875,3 +886,93 @@ footer {
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202022;
+    --bg0: #20202200;
+    --white: #333;
+    --color1A: #2d6b5e;
+    --color1B: #062424;
+    --color1Mid: #1e5149;
+    --color2A: #1c3a4f;
+    --color2B: #2e3150;
+    --color3A: #431c4c;
+    --color3B: #a13c6a;
+    --timeline: #1a1a1a;
+    --timeline0: #1a1a1a00;
+  }
+
+  hr {
+    background-color: #333;
+  }
+
+  nav > svg {
+    filter: brightness(0.75);
+  }
+
+  main .story,
+  main .stats,
+  main .timeline,
+  nav .grid .info p,
+  main .stats .grid > div a,
+  main .stats .grid > div:hover,
+  main .stats .grid > div:hover a,
+  footer .copy span {
+    color: #ddd;
+  }
+
+  nav .grid .links a svg,
+  main .stats .grid > div:hover .icon {
+    fill: #ddd;
+  }
+
+  main .stats .grid > div {
+    background-color: var(--timeline);
+  }
+
+  main .stats .grid > div:hover {
+    border: 1px solid var(--white);
+  }
+
+  main .timeline .grid .item .front,
+  main .timeline .grid .item .back {
+    border: 1px solid var(--white);
+    border-top: 2px solid var(--color2A);
+  }
+
+  main .timeline .grid .item hr {
+    background-color: var(--timeline);
+  }
+
+  main .timeline .grid .item a {
+    color: #4b7ea4;
+  }
+
+  tag {
+    color: #9bc;
+    background-color: #5563;
+
+    &:hover {
+      background-color: #5566;
+    }
+  }
+
+  main .timeline .line .dots div {
+    background-color: #111;
+  }
+
+  main .timeline .grid:after {
+    background-image: linear-gradient(to bottom, var(--bg) 0%, #111 5%, #111 95%, var(--bg) 100%);
+  }
+
+  footer .icons div + span {
+    background-color: #444;
+    color: #bbb;
+  }
+
+  footer .copy .color.c03 span {
+    color: var(--color3B);
+  }
+}
+

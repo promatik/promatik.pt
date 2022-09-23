@@ -15,7 +15,7 @@ let currentColor = 0;
 const app = {
   init: () => {
     // Header age
-    app.setAge();
+    app.setHeader();
 
     // Stats
     app.initStats();
@@ -176,9 +176,15 @@ const app = {
     },
   },
 
-  setAge: () => {
+  setHeader: () => {
     // eslint-disable-next-line max-len
     window.age.innerHTML = new Date((data.death || Date.now()) - data.birth).getUTCFullYear() - 1970;
+
+    // Current location
+    if (data.current) {
+      nav.querySelectorAll('.in,.location').forEach(e => e.style.display = 'none');
+      nav.querySelector('.current').innerText = `Currently in ${data.current}`;
+    }
   },
 
   initStats: () => {
