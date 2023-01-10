@@ -4,21 +4,21 @@
   "death": 0,
   "stats": {
     "car": {
-      "km": 237161,
+      "km": 245030,
       "current_average": {
         "value": 38,
         "since": "2022-07-01"
       }
     },
     "airplane": {
-      "km": 119165,
-      "flights": 29,
-      "countries": 16,
+      "km": 139358,
+      "flights": 32,
+      "countries": 17,
       "continents": 4,
       "islands": 13
     },
     "map": {
-      "abroad": 280,
+      "abroad": 339,
       "living_abroad_since": ""
     },
     "profile": {
