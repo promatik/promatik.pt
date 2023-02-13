@@ -7,13 +7,13 @@
       "km": 245030,
       "current_average": {
         "value": 38,
-        "since": "2022-07-01"
+        "since": "2023-02-01"
       }
     },
     "airplane": {
-      "km": 139358,
+      "km": 246330,
       "flights": 32,
-      "countries": 17,
+      "countries": 18,
       "continents": 4,
       "islands": 13
     },
