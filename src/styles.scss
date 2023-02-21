@@ -14,8 +14,10 @@
 }
 
 html {
+  --navHeight: 192px;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--navHeight);
 }
 *,
 :after,
@@ -29,10 +31,38 @@ a {
   display: none;
 }
 
+.skip-to-content {
+  &:focus-within {
+    position: absolute;
+    left: 2rem;
+    background-color: var(--color1Mid);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 6px #0002;
+    font-size: 1.4rem;
+
+    a {
+      color: #fff;
+  
+      &:focus {
+        outline-color: rgb(77, 144, 254);
+        outline-offset: 2px;
+        outline-style: auto;
+      }
+    }
+  }
+
+  &:not(:focus-within) {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--bg);
-  padding-top: 152px;
+  padding-top: var(--navHeight);
   font-weight: normal;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 
@@ -176,7 +206,7 @@ nav {
 
   & > svg {
     width: 100%;
-    height: 152px;
+    height: var(--navHeight);
     position: absolute;
     z-index: -1;
     fill: url("#gradient");
@@ -298,8 +328,6 @@ nav {
 
 main {
   .story {
-    margin: 46px auto 0;
-
     div:first-child > p:last-child {
       margin-bottom: 0;
     }
@@ -764,6 +792,7 @@ footer {
 // HD
 @media only screen and (max-width: 1280px) {
   html {
+    --navHeight: 152px;
     font-size: 67.5%;
   }
   nav {
@@ -808,15 +837,11 @@ footer {
 // Desktop
 @media only screen and (max-width: 1024px) {
   html {
+    --navHeight: 152px;
     font-size: 62.5%;
-  }
-  body {
-    padding-top: 122px;
   }
   main {
     .story {
-      margin-top: 2rem;
-
       br {
         display: none;
       }
@@ -981,7 +1006,6 @@ footer {
 
 body.x {
   background-image: url('img/pattern.png');
-  padding-top: 192px;
 
   nav > svg {
     display: none;
@@ -994,14 +1018,11 @@ body.x {
   nav {
     background-image: url('img/pattern-header.png');
     background-repeat: repeat-x;
+    background-position-y: bottom;
     text-shadow: 1px 1px 1px rgb(255 255 255 / 50%);
   }
 
-  nav .grid {
-    --pic-size: 172px;
-  }
-
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 1280px) {
     nav .grid {
       --pic-size: 110px;
     }
@@ -1019,7 +1040,9 @@ body.x {
     display: none;
   }
 
-  .paint.hidden {
-    display: initial;
+  .paint {
+    &.hidden {
+      display: initial;
+    }
   }
 }
