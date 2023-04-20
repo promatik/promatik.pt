@@ -1,24 +1,24 @@
 {
   "birth": 616808700000,
-  "current": null,
+  "current": "Koh Lipe, Thailand",
   "death": 0,
   "stats": {
     "car": {
-      "km": 245030,
+      "km": 249404,
       "current_average": {
         "value": 38,
-        "since": "2023-02-01"
+        "since": "2023-04-20"
       }
     },
     "airplane": {
-      "km": 246330,
-      "flights": 32,
-      "countries": 18,
+      "km": 172224,
+      "flights": 33,
+      "countries": 23,
       "continents": 4,
-      "islands": 13
+      "islands": 19
     },
     "map": {
-      "abroad": 339,
+      "abroad": 408,
       "living_abroad_since": ""
     },
     "profile": {
