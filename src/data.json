@@ -1,21 +1,21 @@
 {
   "birth": 616808700000,
-  "current": "Koh Lipe, Thailand",
+  "current": "Gili Meno, Indonesia",
   "death": 0,
   "stats": {
     "car": {
       "km": 249404,
       "current_average": {
         "value": 38,
-        "since": "2023-04-20"
+        "since": "2023-06-01"
       }
     },
     "airplane": {
-      "km": 172224,
-      "flights": 33,
-      "countries": 23,
+      "km": 172268,
+      "flights": 94,
+      "countries": 22,
       "continents": 4,
-      "islands": 19
+      "islands": 24
     },
     "map": {
       "abroad": 408,
