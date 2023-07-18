@@ -1,13 +1,13 @@
 {
   "birth": 616808700000,
-  "current": "Gili Meno, Indonesia",
+  "current": "Feira, Portugal",
   "death": 0,
   "stats": {
     "car": {
-      "km": 249404,
+      "km": 252128,
       "current_average": {
-        "value": 38,
-        "since": "2023-06-01"
+        "value": 34,
+        "since": "2023-07-18"
       }
     },
     "airplane": {
@@ -15,7 +15,7 @@
       "flights": 94,
       "countries": 22,
       "continents": 4,
-      "islands": 24
+      "islands": 25
     },
     "map": {
       "abroad": 408,
