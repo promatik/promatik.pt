@@ -11,14 +11,14 @@
       }
     },
     "airplane": {
-      "km": 172268,
-      "flights": 94,
-      "countries": 22,
+      "km": 179220,
+      "flights": 96,
+      "countries": 23,
       "continents": 4,
-      "islands": 25
+      "islands": 31
     },
     "map": {
-      "abroad": 408,
+      "abroad": 423,
       "living_abroad_since": ""
     },
     "profile": {
