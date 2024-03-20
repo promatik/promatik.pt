@@ -1,24 +1,24 @@
 {
   "birth": 616808700000,
-  "current": "Feira, Portugal",
+  "current": "Funchal, Portugal",
   "death": 0,
   "stats": {
     "car": {
-      "km": 252128,
+      "km": 254672,
       "current_average": {
         "value": 34,
-        "since": "2023-07-18"
+        "since": "2024-03-01"
       }
     },
     "airplane": {
-      "km": 179220,
-      "flights": 96,
+      "km": 185218,
+      "flights": 98,
       "countries": 23,
-      "continents": 4,
-      "islands": 31
+      "islands": 31,
+      "continents": 4
     },
     "map": {
-      "abroad": 423,
+      "abroad": 427,
       "living_abroad_since": ""
     },
     "profile": {
