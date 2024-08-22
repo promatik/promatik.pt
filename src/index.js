@@ -123,7 +123,7 @@ const app = {
 
     timeline: () => {
       const bottom = nav.offsetHeight - timeline.offsetTop + 60;
-      const pos = Math.max(0, window.pageYOffset + bottom);
+      const pos = Math.max(0, window.scrollY + bottom);
       const max = document.body.offsetHeight - window.innerHeight + bottom;
       const percent = timeline.offsetHeight * (pos / (max + 200));
 
@@ -145,7 +145,7 @@ const app = {
     },
 
     sections: () => {
-      const yPos = window.pageYOffset;
+      const yPos = window.scrollY;
       const breaks = [
         timeline.offsetTop - 200,
         document.body.offsetHeight - window.innerHeight - 200,
