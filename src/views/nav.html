@@ -16,26 +16,26 @@
     <picture>
       <each loop="extension in ['webp', 'jpg']">
         <source sizes="(max-width: 1280px) 64px, 128px" srcset="
-                /img/profile-64.{{ extension }}   64w,
-                /img/profile-128.{{ extension }} 128w,
-                /img/profile-256.{{ extension }} 256w,
-                /img/profile-512.{{ extension }} 512w
+                ./img/profile-64.{{ extension }}   64w,
+                ./img/profile-128.{{ extension }} 128w,
+                ./img/profile-256.{{ extension }} 256w,
+                ./img/profile-512.{{ extension }} 512w
               " type="image/{{ extension }}" />
       </each>
-      <img src="/img/profile-128.jpg" alt="profile picture" width="100%" />
+      <img src="./img/profile-128.jpg" alt="profile picture" width="100%" />
     </picture>
   </div>
   <div class="paint hidden">
     <picture>
       <each loop="extension in ['webp']">
         <source sizes="(max-width: 1280px) 64px, 128px" srcset="
-                /img/paint-64.{{ extension }}   64w,
-                /img/paint-128.{{ extension }} 128w,
-                /img/paint-256.{{ extension }} 256w,
-                /img/paint-512.{{ extension }} 512w
+                ./img/paint-64.{{ extension }}   64w,
+                ./img/paint-128.{{ extension }} 128w,
+                ./img/paint-256.{{ extension }} 256w,
+                ./img/paint-512.{{ extension }} 512w
               " type="image/{{ extension }}" />
       </each>
-      <img loading="lazy" src="/img/paint-128.webp" alt="profile paint" width="100%" />
+      <img loading="lazy" src="./img/paint-128.webp" alt="profile paint" width="100%" />
     </picture>
   </div>
   <div class="links">

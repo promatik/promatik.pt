@@ -95,7 +95,7 @@ const app = {
             p.closest('.read').classList.toggle('active');
             app.timeline.setPositions();
             app.onScroll.timeline();
-          }
+          },
         );
       }
     });
@@ -179,7 +179,6 @@ const app = {
   },
 
   setHeader: () => {
-    // eslint-disable-next-line max-len
     window.age.innerHTML = new Date((data.death || Date.now()) - data.birth).getUTCFullYear() - 1970;
 
     // Current location
@@ -210,7 +209,7 @@ const app = {
 
     // Stackoverflow
     fetch(
-      'https://api.stackexchange.com/2.2/users/1192479?site=stackoverflow'
+      'https://api.stackexchange.com/2.2/users/1192479?site=stackoverflow',
     ).then(response => response.json().then(json => {
       const diff = (new Date() / 1000 - new Date(json.items[0].last_access_date)) / 60;
       let divider; let unit;
@@ -247,7 +246,7 @@ const app = {
         'https://api.github.com/users/promatik',
         'https://api.github.com/users/promatik/orgs',
         'https://api.github.com/users/promatik/repos?per_page=100',
-      ].map(u => fetch(u).then(response => response.json()))
+      ].map(u => fetch(u).then(response => response.json())),
     ).then(responses => {
       fillStatsRow('github', [
         responses[2]
@@ -316,7 +315,7 @@ const app = {
 
     fillStatsRow(
       'profile',
-      Object.values(values).map(e => numberFixed(e / age))
+      Object.values(values).map(e => numberFixed(e / age)),
     );
   },
 
@@ -372,7 +371,7 @@ const app = {
 
       if (data.death) {
         const p = window.elapsed.closest('p');
-        p.innerHTML = p.innerHTML.replace("it's been", 'it was');
+        p.innerHTML = p.innerHTML.replace('it\'s been', 'it was');
       }
     },
 

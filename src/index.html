@@ -12,7 +12,7 @@
   <meta name="zone" content="PT" />
   <meta name="author" content="António Almeida" />
   <meta name="developer" content="promatik" />
-  <meta name="image" content="/img/profile-512.jpg" />
+  <meta name="image" content="./img/profile-512.jpg" />
   <meta name="description" content="Software Engineer from Porto, Portugal. Studied Computer Graphics and Multimedia Engineer at IPVC. Get to know my work!" />
   <meta name="keywords" content="António Almeida, promatik, Software Developer, Portfolio, Personal, Developer, Designer, WebDeveloper, WebDesigner, Interface Designer, Multimedia, Mobile, Programmer, Porto, Milheirós de Poiares, Milheirós, Poiares" />
   <meta name="rating" content="General" />
@@ -24,7 +24,7 @@
   <!-- App -->
   <link rel="manifest" href="manifest.webmanifest" />
   <each loop="item in [32, 96, 16]">
-    <link rel="icon" type="image/png" sizes="{{ item }}x{{ item }}" href="/ico/favicon-{{ item }}x{{ item }}.png" />
+    <link rel="icon" type="image/png" sizes="{{ item }}x{{ item }}" href="./ico/favicon-{{ item }}x{{ item }}.png" />
   </each>
   <meta name="application-name" content="promatik" />
   <meta name="apple-mobile-web-app-title" content="promatik" />
@@ -32,17 +32,17 @@
 
   <!-- Apple -->
   <each loop="item in [76, 120, 152, 180]">
-    <link rel="apple-touch-icon" sizes="{{ item }}x{{ item }}" href="/ico/apple-icon-{{ item }}x{{ item }}.png" />
+    <link rel="apple-touch-icon" sizes="{{ item }}x{{ item }}" href="./ico/apple-icon-{{ item }}x{{ item }}.png" />
   </each>
 
   <!-- Microsoft -->
   <meta name="msapplication-TileColor" content="#205081" />
-  <meta name="msapplication-TileImage" content="/ico/android-icon-144x144.png" />
+  <meta name="msapplication-TileImage" content="./ico/android-icon-144x144.png" />
 
   <!-- Facebook -->
   <meta property="og:title" content="António Almeida, Software Developer, promatik" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/img/profile-512.jpg" />
+  <meta property="og:image" content="./img/profile-512.jpg" />
   <meta property="og:description" content="Software Engineer from Porto, Portugal. Studied Computer Graphics and Multimedia Engineer at IPVC. Get to know my work!" />
   <meta property="og:url" content="https://promatik.pt" />
   <meta property="fb:admins" content="100000258524385" />
@@ -87,7 +87,7 @@
   <!-- SVGs -->
   <include src="views/defs.svg"></include>
 
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 
   <!-- Google Analytics -->
   <script>
@@ -101,7 +101,8 @@
 
   <!-- Service Worker -->
   <script>
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/service-worker.js');
+    const sw = navigator.serviceWorker;
+    sw?.register('./service-worker.js')
   </script>
 
 </body>
