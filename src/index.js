@@ -1,3 +1,4 @@
+/* eslint-disable no-import-assign */
 import './styles.scss';
 import 'normalize.css';
 import * as data from './data.json';
@@ -35,6 +36,9 @@ const app = {
 
     // On scroll event
     app.onScroll.init();
+
+    // Update with up to date data
+    app.upToDateData();
 
     document.addEventListener('keypress', e => document.body.classList.toggle(e.key));
   },
@@ -378,6 +382,26 @@ const app = {
     setPositions: () => {
       cards.forEach((card, i) => dots[i].style.top = `${card.offsetTop + 10}px`);
     },
+  },
+
+  upToDateData: async () => {
+    const date = new Date();
+    const cache = (date.getMonth() * 30 + date.getDate()) / 5 | 0; // cache for 5 days (no precision needed)
+    const response = await fetch('https://ts1jdw.db.files.1drv.com/y4mtGzwHyWcvdBf0YHOVDIEF0Ze-TXg5-9M-7HOsp5FjYG3oO79gC8B-VgtYnrYDyklTsqFHlV75AvJcyqRC5dblqirECjmz-w10nVY7az2T1oLMCWrQFKKX8PWAAib7MEvZwaNiZKI-EgcPshVxu_W3W3OFdDcL9EMSTaj9__w2LA5Saaaj1sgQy4g5gIwWLp9EFiYnVgXTHuAzWcDcX5S2g?w='+cache);
+    const csv = await response.text();
+    const values = csv.split(';');
+
+    data.current = values[0];
+    data.stats.airplane.countries = +values[1];
+    data.stats.airplane.islands = +values[2];
+    data.stats.airplane.continents = +values[3];
+    data.stats.car.km = +values[4];
+    data.stats.airplane.flights = +values[5];
+    data.stats.airplane.km = +values[6];
+    data.stats.map.abroad = +values[7];
+
+    app.setHeader();
+    app.initStats();
   },
 };
 
