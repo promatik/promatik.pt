@@ -387,7 +387,7 @@ const app = {
   upToDateData: async () => {
     const date = new Date();
     const cache = (date.getMonth() * 30 + date.getDate()) / 5 | 0; // cache for 5 days (no precision needed)
-    const response = await fetch('https://ts1jdw.db.files.1drv.com/y4mtGzwHyWcvdBf0YHOVDIEF0Ze-TXg5-9M-7HOsp5FjYG3oO79gC8B-VgtYnrYDyklTsqFHlV75AvJcyqRC5dblqirECjmz-w10nVY7az2T1oLMCWrQFKKX8PWAAib7MEvZwaNiZKI-EgcPshVxu_W3W3OFdDcL9EMSTaj9__w2LA5Saaaj1sgQy4g5gIwWLp9EFiYnVgXTHuAzWcDcX5S2g?w='+cache);
+    const response = await fetch('https://gist.githubusercontent.com/promatik/cae5f2c4f3eda0b749da2fb8da7a44fd/raw/260f6dd1f205fdf1facc34407eef8c7957f1d6d1?w='+cache);
     const csv = await response.text();
     const values = csv.split(';');
 
