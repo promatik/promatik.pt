@@ -200,7 +200,7 @@ const app = {
       const box = document.querySelector(`.stats [data="${row}"]`);
       box
         .querySelectorAll('em')
-        .forEach((elem, i) => { if (rows[i]) elem.innerHTML = rows[i]; });
+        .forEach((elem, i) => { if (rows[i]) elem.innerText = rows[i]; });
       box.classList.add('active');
     };
 
