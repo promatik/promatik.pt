@@ -14,7 +14,7 @@
   </div>
   <div class="profile">
     <picture>
-      <each loop="extension in ['webp', 'jpg']">
+      <each loop="extension in ['avif', 'webp', 'jpg']">
         <source sizes="(max-width: 1280px) 64px, 128px" srcset="
                 ./img/profile-64.{{ extension }}   64w,
                 ./img/profile-128.{{ extension }} 128w,
@@ -22,7 +22,7 @@
                 ./img/profile-512.{{ extension }} 512w
               " type="image/{{ extension }}" />
       </each>
-      <img src="./img/profile-128.jpg" alt="profile picture" width="100%" />
+      <img src="./img/profile-128.jpg" alt="profile picture" width="100%" fetchpriority="high" />
     </picture>
   </div>
   <div class="paint hidden">

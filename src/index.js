@@ -12,6 +12,7 @@ const dots = [];
 const configs = { speed: 8, details: 14 };
 let animTime = 0;
 let currentColor = 0;
+let activeTimelineIndex = -1;
 
 const app = {
   init: () => {
@@ -39,6 +40,9 @@ const app = {
 
     // Update with up to date data
     app.upToDateData();
+
+    // Defer analytics so it does not compete with first render work.
+    app.analytics.initDeferred();
 
     document.addEventListener('keypress', e => document.body.classList.toggle(e.key));
   },
@@ -96,7 +100,16 @@ const app = {
 
         read.querySelectorAll('.read-more, .read-less').forEach(
           p => p.onclick = () => {
-            p.closest('.read').classList.toggle('active');
+            const container = p.closest('.read');
+            container.classList.toggle('active');
+
+            const section = container.closest('.item, .story, .stats');
+            const title = section?.querySelector('h1')?.textContent?.trim() || 'unknown';
+            app.analytics.track('content_toggle', {
+              section_title: title,
+              toggle_state: container.classList.contains('active') ? 'open' : 'closed',
+            });
+
             app.timeline.setPositions();
             app.onScroll.timeline();
           },
@@ -134,6 +147,14 @@ const app = {
       for (let i = 0; i < cards.length; i += 1) {
         if (cards[i].offsetTop > percent) {
           blob.style.setProperty('--position', `${dots[i].offsetTop || 0}px`);
+
+          if (activeTimelineIndex !== i) {
+            activeTimelineIndex = i;
+            app.analytics.track('timeline_focus', {
+              item_index: i + 1,
+              item_title: cards[i].querySelector('.header h1')?.textContent?.trim() || 'unknown',
+            });
+          }
 
           cards.forEach((card, j) => card.classList.toggle('active', i === j));
           dots.forEach((dot, j) => dot.classList.toggle('active', i === j));
@@ -402,6 +423,70 @@ const app = {
 
     app.setHeader();
     app.initStats();
+  },
+
+  analytics: {
+    init: () => {
+      app.analytics.bindLinkTracking();
+    },
+
+    initDeferred: () => {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(() => app.analytics.init(), { timeout: 2000 });
+      } else {
+        setTimeout(() => app.analytics.init(), 0);
+      }
+    },
+
+    track: (eventName, params = {}) => {
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('event', eventName, params);
+    },
+
+    bindLinkTracking: () => {
+      document.addEventListener('click', e => {
+        const anchor = e.target.closest('a[href]');
+        if (!anchor) return;
+
+        const rawHref = anchor.getAttribute('href') || '';
+        if (rawHref.startsWith('#') || rawHref.startsWith('javascript:')) return;
+
+        let url;
+        try {
+          url = new URL(rawHref, window.location.href);
+        } catch {
+          return;
+        }
+
+        const text = anchor.textContent?.trim() || anchor.title || anchor.getAttribute('aria-label') || 'unknown';
+        const section = anchor.closest('nav, footer, .timeline, .stats, .story, main')?.tagName?.toLowerCase() || 'unknown';
+        const isExternal = url.origin !== window.location.origin;
+        const pathname = url.pathname.toLowerCase();
+        const isFileDownload = /\.(pdf|zip|docx?|xlsx?|pptx?)$/.test(pathname);
+
+        if (isFileDownload) {
+          const fileName = pathname.split('/').pop() || 'unknown';
+          const extension = fileName.includes('.') ? fileName.split('.').pop() : 'unknown';
+          app.analytics.track('file_download', {
+            file_name: fileName,
+            file_extension: extension,
+            link_text: text,
+            link_url: url.href,
+            section,
+          });
+          return;
+        }
+
+        if (isExternal) {
+          app.analytics.track('outbound_click', {
+            link_text: text,
+            link_url: url.href,
+            link_domain: url.hostname,
+            section,
+          });
+        }
+      });
+    },
   },
 };
 

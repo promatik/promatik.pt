@@ -1,5 +1,13 @@
 const VERSION = 'promatik-0.0.2';
 
+self.onactivate = e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))
+    )
+  );
+};
+
 const fetchAndCache = async request => {
   const result = await fetch(request);
   caches.open(VERSION).then(cache => cache.put(request.url, result));
