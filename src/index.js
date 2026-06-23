@@ -413,13 +413,13 @@ const app = {
     const values = csv.split(';');
 
     data.current = values[0];
-    data.stats.airplane.countries = +values[1];
-    data.stats.airplane.islands = +values[2];
-    data.stats.airplane.continents = +values[3];
-    data.stats.car.km = +values[4];
-    data.stats.airplane.flights = +values[5];
-    data.stats.airplane.km = +values[6];
-    data.stats.map.abroad = +values[7];
+    data.stats.airplane.countries = values[1];
+    data.stats.airplane.islands = values[2];
+    data.stats.airplane.continents = values[3];
+    data.stats.car.km = values[4];
+    data.stats.airplane.flights = values[5];
+    data.stats.airplane.km = values[6];
+    data.stats.map.abroad = values[7];
 
     app.setHeader();
     app.initStats();
