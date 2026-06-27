@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>António Almeida — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #214493;
+      --ink: #565656;
+      --rule: #cfcfcf;
+      --photo-border: #c6c6c6;
+      --sidebar-bg: #f0f0ee;
+      --sidebar-w: 31%;
+      --pad-x: 16pt;
+      --font: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-head: 'Avenir Next Condensed', 'Barlow Semi Condensed', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #e9e9ec;
+      font-family: var(--font);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 9mm;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, .18);
+      display: flex;
+      overflow: hidden;
+    }
+
+    .page:first-of-type {
+      margin-top: 9mm;
+    }
+
+    .sidebar {
+      flex: 0 0 var(--sidebar-w);
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      padding: 13mm 11pt 12mm 11pt;
+    }
+
+    .photo {
+      width: 88pt;
+      height: 88pt;
+      margin: 6pt auto 13pt;
+      border-radius: 50%;
+      border: 1.5pt solid var(--photo-border);
+      object-fit: cover;
+      display: block;
+    }
+
+    .name {
+      font-family: var(--font-head);
+      text-align: center;
+      font-size: 16pt;
+      line-height: 1.15;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .name b {
+      font-weight: 700;
+    }
+
+    .birth {
+      text-align: center;
+      font-weight: 700;
+      font-size: 10.6pt;
+      margin: 5pt 0 0;
+    }
+
+    .website {
+      text-align: center;
+      margin: 9pt 0 0;
+      font-size: 10.6pt;
+    }
+
+    .website a {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    .side-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 13.5pt;
+      letter-spacing: .3pt;
+      margin: 26pt 0 11pt;
+    }
+
+    /* Itens de contacto com ícone azul (sem caixa) */
+    .contact {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact li {
+      display: flex;
+      align-items: center;
+      gap: 8pt;
+      margin: 0 0 10pt;
+      font-size: 10.4pt;
+      line-height: 1.2;
+    }
+
+    .ic {
+      flex: 0 0 auto;
+      width: 15pt;
+      height: 15pt;
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ic svg {
+      width: 15pt;
+      height: 15pt;
+      fill: none;
+      stroke: currentColor;
+    }
+
+    .contact a {
+      color: var(--ink);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .content {
+      flex: 1 1 auto;
+      padding: 11mm 12mm 10mm var(--pad-x);
+      position: relative;
+    }
+
+    .section {
+      font-family: var(--font-head);
+      font-size: 14.5pt;
+      font-weight: 500;
+      letter-spacing: .4pt;
+      margin: 0 0 8pt;
+      padding-bottom: 4pt;
+      border-bottom: .8pt solid var(--rule);
+    }
+
+    .section:not(:first-child) {
+      margin-top: 11pt;
+    }
+
+    .no-line {
+      margin-left: calc(2pt - var(--pad-x));
+    }
+
+    p {
+      margin: 0 0 5pt;
+      font-size: 9.6pt;
+      line-height: 1.13;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .timeline {
+      position: relative;
+    }
+
+    .content>.timeline:not(:first-child) {
+      margin-top: 11pt;
+    }
+
+    .entries {
+      position: relative;
+    }
+
+    .entries::before {
+      content: "";
+      position: absolute;
+      top: 4pt;
+      bottom: 0;
+      left: calc(-1 * var(--pad-x));
+      width: 1.6pt;
+      background: var(--blue);
+    }
+
+    .entry {
+      margin: 0 0 9pt;
+    }
+
+    .entry .date {
+      position: relative;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 8pt;
+      letter-spacing: .4pt;
+      text-transform: uppercase;
+      margin: 0 0 5pt;
+      padding-left: 2pt;
+    }
+
+    .entry .date::before {
+      content: "";
+      position: absolute;
+      left: calc(-3pt - var(--pad-x));
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8pt;
+      height: 8pt;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .entry .role {
+      font-weight: 700;
+      font-size: 10.2pt;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    .entry .company {
+      font-size: 10.2pt;
+      margin: 0 0 5pt;
+    }
+
+    ul.bullets {
+      margin: 0 0 4pt;
+      padding-left: 14pt;
+    }
+
+    ul.bullets li {
+      font-size: 9.6pt;
+      line-height: 1.1;
+      margin: 0 0 1pt;
+    }
+
+    .lang-mother {
+      font-size: 10.4pt;
+      margin: 2pt 0 9pt;
+    }
+
+    .lang-mother b {
+      font-weight: 700;
+    }
+
+    table.langs {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 10.4pt;
+      margin-top: 4pt;
+    }
+
+    table.langs td {
+      padding: 3pt 6pt;
+      border: .6pt solid var(--rule);
+      text-align: center;
+    }
+
+    table.langs td.lbl {
+      font-weight: 600;
+      background: #e7e7e9;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+
+      .page,
+      .page:first-of-type {
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .page {
+        break-after: page;
+        break-inside: avoid;
+      }
+
+      .page:last-of-type {
+        break-after: auto;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar">
+      <img class="photo" src="../img/profile-128.jpg" alt="António Almeida">
+
+      <h1 class="name"><b>António</b> Almeida</h1>
+      <div class="birth">18 Jul 1989</div>
+      <div class="website"><a href="https://promatik.pt">promatik.pt</a></div>
+
+      <div class="side-title">CONTACT</div>
+      <ul class="contact">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" />
+            </svg></span>
+          <span>Milheirós de Poiares, Portugal</span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+              <path d="M3 7l9 6l9 -6" />
+            </svg></span>
+          <span><a href="mailto:promatik@gmail.com">promatik@gmail.com</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+            </svg></span>
+          <span><a href="tel:+351968422730">(+351) 968 422 730</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+            </svg></span>
+          <span><a href="https://github.com/promatik">github.com/promatik</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 11v5" />
+              <path d="M8 8v.01" />
+              <path d="M12 16v-5" />
+              <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+              <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" />
+            </svg></span>
+          <span><a href="https://linkedin.com/in/promatik/">linkedin.com/in/promatik</a></span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="content">
+
+      <h2 class="section">ABOUT ME</h2>
+      <p>I started to code in middle school with my Texas Instruments 84 calculator, back in 2004. I didn't know what I was doing, it was mostly trial and error, trying to print something on the screen. Since then, and a degree later, I've been doing a bit of everything! I can code in several languages, for multiple platforms, web apps, mobile games, desktop/mobile interactive apps, interactive solutions with Arduino, browser extensions, web with PHP, Laravel, Javascript, Vue.js, I have some projects on GitHub, mainly Java, PHP and Javascript and I've collaborated on many open source projects.</p>
+
+      <div class="timeline">
+        <h2 class="section">WORK EXPERIENCE</h2>
+
+        <div class="entries">
+          <div class="entry">
+            <div class="date">Feb 2022 — Current</div>
+            <p class="role">Full Stack Developer</p>
+            <p class="company">Immera</p>
+            <p>Immera is a spinoff of Gema. I've focused on full-stack development, primarily implementing <strong>Laravel PHP</strong> backends, building <strong>Node.js</strong> services, and crafting responsive <strong>JavaScript</strong> frontends.</p>
+            <p>Some projects you may have heard about:</p>
+            <ul class="bullets">
+              <li><strong>Brightnow</strong> (my.brightnow.app)</li>
+              <li><strong>Vine and Wine</strong> (vinewineplatform.com)</li>
+              <li><strong>APRAM</strong> (apram.pt)</li>
+              <li><strong>Spotify</strong> (Sensoring installation)</li>
+              <li><strong>Bairros Digitais</strong> (setubalconnect.pt)</li>
+              <li><strong>Santa Casa</strong></li>
+              <li><strong>Comédia à la Carte</strong> (Interactive webapp for their shows)</li>
+              <li><strong>Super Bock</strong></li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="date">Apr 2013 — Feb 2022</div>
+            <p class="role">Full Stack Developer</p>
+            <p class="company">Gema Digital</p>
+            <p>By working at GEMA I've been developing with many technologies, in many places, mostly for Portugal, but also Greece and Brazil, with projects all around the world.</p>
+            <p>I've been doing mostly <strong>Laravel PHP</strong> backend and API, <strong>Node JS</strong> apps, <strong>Javascript Webapps</strong>, <strong>Java</strong> socket servers, <strong>Unix</strong> server management, <strong>MySQL</strong> and <strong>Redis</strong> Databases, some <strong>Python</strong> scripting and <strong>Arduino</strong>.</p>
+            <p>Some installations you may have heard about:</p>
+            <ul class="bullets">
+              <li><strong>World of Wine</strong> (Oporto, PT)</li>
+              <li><strong>Pelé Museum</strong> (São Paulo, Brasil)</li>
+              <li><strong>World of discoveries</strong> (Oporto, PT)</li>
+              <li><strong>Chocolate Factory</strong> (Viana do Castelo, PT)</li>
+              <li><strong>FIFA U-20 World Cup</strong> (Turkey)</li>
+              <li><strong>Filda '13 &amp; '14</strong> (Angola)</li>
+            </ul>
+            <p>Some projects:</p>
+            <ul class="bullets">
+              <li><strong>Unicredit UEFA Champions League Final</strong> (Augmented reality Android app)</li>
+              <li><strong>Benfica Tours</strong> (Augmented reality tour around the stadium)</li>
+              <li><strong>Rock In Rio '14 - Santa Casa</strong> (Mobile game)</li>
+              <li><strong>Filda - Total / Esso / Chevron / Viv / Sonangol / Total / Zap</strong> (Mobile apps and games)</li>
+              <li><strong>Federação Portuguesa de Futebol</strong> (brand activation apps)</li>
+              <li><strong>Tabaqueira</strong> (ad management system for android displays)</li>
+              <li><strong>Penalty Quiz</strong> (iOS/Android game)</li>
+              <li><strong>Footy Quiz</strong> (iOS/Android game)</li>
+              <li><strong>XPlora</strong> (Augmented reality mobile app)</li>
+              <li><strong>OneCore</strong> (Node JS app, with webapp, to control devices on Gema installations)</li>
+              <li><strong>MOSS</strong> (Java multiplayer socket server)</li>
+            </ul>
+            <p>Among many others like Casa do Cinema Manoel de Oliveira, Embratur, Pepsi, Angolauto, Amazonas, Seat, Nespresso and many GEMA own projects.</p>
+          </div>
+        </div><!-- /.entries -->
+      </div><!-- /.timeline -->
+    </main>
+  </div><!-- /.page (1) -->
+
+  <!-- ===================== PÁGINA 2 ===================== -->
+  <div class="page">
+    <aside class="sidebar"></aside>
+    <main class="content">
+      <div class="timeline">
+
+        <div class="entries">
+          <div class="entry">
+            <div class="date">Jun 2018 — Current</div>
+            <p class="role">Volunteer</p>
+            <p class="company">Animais de Rua</p>
+            <p>Animais de Rua is a non profit organization who rescue animals in the streets. They were in need of a platform to manage every process related to the animal collecting and treatment. I was glad I could help, I created their back office from scratch using Laravel, it's all open source on github.com/animais-de-rua, it's a huge project with tons of entities and relations between them and a lot of different permissions for users.</p>
+            <p>Later on I ended up also creating their website, which is fed with data from the back office. The website is also a webapp, since I had the time, I created everything from scratch with no frameworks, just Vanilla JS, it's just 14K of JS+CSS, everything is cached and shown instantly to the user. Google Lighthouse score is near 100%, I tried to apply the best principles and the most recent web methodologies.</p>
+            <p>I've been collaborating with them since then, there's always some fixes and adjustments to make the platform better.</p>
+          </div>
+
+          <div class="entry">
+            <div class="date">Oct 2023</div>
+            <p class="role">Volunteer · Patient screening app</p>
+            <p class="company">Portugal para África</p>
+            <p>I took part in a humanitarian mission to Cape Verde with portugalparaafrica.org, where I developed an app to support patient screening and triage during the mission.</p>
+          </div>
+
+          <div class="entry">
+            <div class="date">May 2017 — Jun 2024</div>
+            <p class="role">Open Source Contributor</p>
+            <p class="company">Backpack for Laravel</p>
+            <p>Backpack for Laravel is an Open Source project maintained by Cristian Tabacitu, it makes any developer's life easy by speeding up CRUD development. There's a great community around this project and I'm glad to be part of the organization and contribute with code and ideas. You can find it at github.com/Laravel-Backpack/CRUD.</p>
+          </div>
+
+          <div class="entry">
+            <div class="date">Aug 2011 — Mar 2013</div>
+            <p class="role">Internship as Web Developer</p>
+            <p class="company">CBB Interactive</p>
+            <p>This was my first job, I was mainly a web developer and learnt more in a few months than I could expect. I learnt many concepts of GIS (Geographic information systems), I was able to improve my knowledge a lot.</p>
+            <p>I've collaborated on a few projects, but I was able to achieve many others on my own, as the B-Around Map, probably the biggest challenge I had, it was a library that allows to add a map module to a page (like google maps but with its own layout and tiles).</p>
+            <p>I was also the main developer for other projects, Creative Bitbox website using PHP and a lot of jQuery and Inova Gaia website using Ruby on Rails and also jQuery (popular at that time).</p>
+          </div>
+
+          <div class="entry">
+            <div class="date">Jan 2013 — Current</div>
+            <p class="role">Full Stack Developer</p>
+            <p class="company">Freelancer</p>
+            <p>I've been working as a freelancer for a long time, I've made some websites, like Wood Prestige, Web Sinus, DAM. A lot of mobile games and brand activation apps for some famous brands like Água das Pedras, Clinical Lab, DGS, Lidl, MEO, Navigator, Federação Portuguesa de Futebol, OK estudante and Santa Casa. I created an ad management system for Tabaqueira, the biggest portuguese tobacco company, it was a CakePHP backend to remote control ads displayed on all-in-one android displays, almost every tobacco seller in the country used it.</p>
+          </div>
+        </div><!-- /.entries -->
+      </div><!-- /.timeline -->
+    </main>
+  </div><!-- /.page (2) -->
+
+  <!-- ===================== PÁGINA 3 ===================== -->
+  <div class="page">
+    <aside class="sidebar"></aside>
+    <main class="content">
+      <div class="timeline">
+
+        <h2 class="section">EDUCATION AND TRAINING</h2>
+        <div class="entries">
+          <div class="entry">
+            <div class="date">Aug 2008 — Jun 2011 · Viana do Castelo, Portugal</div>
+            <p class="role">Graphic Computation and Multimedia Engineer</p>
+            <p class="company">Instituto Politécnico de Viana do Castelo</p>
+            <p>Some of the most important classes/concepts in my graduation were; Algorithms and data structures, Mathematics for graphic computation, 3D Programming, Data Bases, Networks, Graphic Computation, Virtual Reality, 3D Modeling, Multimedia systems, Geographic information systems and Software engineering.</p>
+          </div>
+
+          <div class="entry">
+            <div class="date">Aug 2005 — Jul 2008 · São João da Madeira, Portugal</div>
+            <p class="role">Sciences</p>
+            <p class="company">Escola Secundária Oliveira Júnior</p>
+          </div>
+        </div><!-- /.entries -->
+
+        <h2 class="section">HONOURS AND AWARDS</h2>
+        <div class="entries">
+          <div class="entry">
+            <div class="date">May 2013</div>
+            <p class="role">Merit Award · Ministry of Education</p>
+          </div>
+        </div><!-- /.entries -->
+
+        <h2 class="section">LANGUAGE SKILLS</h2>
+        <p class="lang-mother"><b>MOTHER TONGUE:</b> Portuguese</p>
+        <p class="lang-mother"><b>English</b></p>
+        <table class="langs">
+          <tr>
+            <td class="lbl">Listening</td>
+            <td class="lbl">Reading</td>
+            <td class="lbl">Spoken production</td>
+            <td class="lbl">Spoken interaction</td>
+            <td class="lbl">Writing</td>
+          </tr>
+          <tr>
+            <td>C1</td>
+            <td>C1</td>
+            <td>B2</td>
+            <td>B2</td>
+            <td>C1</td>
+          </tr>
+        </table>
+
+        <h2 class="section">CONFERENCES AND SEMINARS</h2>
+        <ul class="bullets">
+          <li>Participated in the conference of Graphics Computation and Multimedia, 2009.</li>
+          <li>Organized the conference of Graphics Computation and Multimedia in 2010 and 2011.</li>
+          <li>Developed a workshop on Flash (mini game).</li>
+          <li>Participated in the projects show of the ECGM 2012 lecture.</li>
+        </ul>
+      </div><!-- /.timeline -->
+
+    </main>
+  </div>
+</body>
+
+</html>
