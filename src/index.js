@@ -287,7 +287,7 @@ const app = {
     });
 
     // Car
-    const km = stats.car.km
+    const km = Number(stats.car.km)
       + ((Date.now() - new Date(stats.car.current_average.since)) / 8784e4)
       * stats.car.current_average.value;
     const hours = km / 62;
@@ -373,7 +373,7 @@ const app = {
 
         // Date formatting
         let result = dateFormatter(dateA);
-        if (dateA.getDate() !== dateB.getDate()) { result += ` → ${item.getAttribute('end') ? dateFormatter(dateB) : 'Current'}`; }
+        if (!item.getAttribute('end') || dateA.getTime() !== dateB.getTime()) { result += ` → ${item.getAttribute('end') ? dateFormatter(dateB) : 'Current'}`; }
 
         // Current
         const diff = (dateB - dateA) / 31536e6;
