@@ -305,6 +305,7 @@ const app = {
       stats.airplane.countries,
       stats.airplane.continents,
       stats.airplane.islands,
+      stats.airplane.land_borders,
     ]);
 
     // Map
@@ -416,10 +417,11 @@ const app = {
     data.stats.airplane.countries = values[1];
     data.stats.airplane.islands = values[2];
     data.stats.airplane.continents = values[3];
-    data.stats.car.km = values[4];
-    data.stats.airplane.flights = values[5];
-    data.stats.airplane.km = values[6];
-    data.stats.map.abroad = values[7];
+    data.stats.airplane.land_borders = values[4];
+    data.stats.car.km = values[5];
+    data.stats.airplane.flights = values[6];
+    data.stats.airplane.km = values[7];
+    data.stats.map.abroad = values[8];
 
     app.setHeader();
     app.initStats();
